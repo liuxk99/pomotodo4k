@@ -34,8 +34,8 @@ class TodoTest {
 
     @org.junit.Test
     fun testToString() {
-        var gson = Gson()
-        var todo = gson.fromJson(json_str, Todo::class.java)
+        val gson = Gson()
+        val todo = gson.fromJson(json_str, Todo::class.java)
         println(todo)
     }
 }
