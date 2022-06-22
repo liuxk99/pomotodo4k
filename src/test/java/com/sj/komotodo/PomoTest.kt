@@ -1,6 +1,7 @@
 package com.sj.komotodo
 
 import com.google.gson.Gson
+import com.sj.komotodo.entity.Pomo
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

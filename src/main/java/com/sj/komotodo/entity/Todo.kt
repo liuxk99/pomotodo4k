@@ -1,4 +1,4 @@
-package com.sj.komotodo
+package com.sj.komotodo.entity
 
 import com.google.gson.annotations.SerializedName
 

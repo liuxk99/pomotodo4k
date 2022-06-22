@@ -1,6 +1,7 @@
 package com.sj.komotodo
 
 import com.google.gson.Gson
+import com.sj.komotodo.entity.Todo
 
 class TodoTest {
     val json_str = """
