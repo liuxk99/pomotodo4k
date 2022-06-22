@@ -64,7 +64,7 @@ data class Pomo(
             val dateStr = SimpleDateFormat("yyyy-MM-dd").format(local_started_at)
             val beginStr = SimpleDateFormat("hh:mm:ss").format(local_started_at)
             val endStr = SimpleDateFormat("hh:mm:ss").format(local_ended_at)
-            sb.append("  ${dateStr} ${beginStr}~${endStr} (${duration}:seconds) '${description}'")
+            sb.append("  ${uuid}: ${dateStr} ${beginStr}~${endStr} (${duration}:seconds) '${description}'")
         }
         return sb.toString()
     }

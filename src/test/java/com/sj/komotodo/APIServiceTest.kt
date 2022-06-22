@@ -53,4 +53,33 @@ class APIServiceTest {
             e.printStackTrace()
         }
     }
+
+
+    @Test
+    fun testGetPomos() {
+        val refDate = Date()
+        val startedAt = Date(refDate.year, refDate.month, refDate.date - 1)
+
+        try {
+            val response = service.getPomos(
+                tokenTag,
+                startedAt.toISO8601(),
+                null,
+                null,
+                null,
+                false,
+                false
+            ).execute()
+            if (response.isSuccessful) {
+//                println(response.body())
+                response.body()?.iterator()?.forEach {
+                    println(it.toLine())
+                }
+            } else {
+                // failed
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 }
