@@ -1,6 +1,7 @@
 package com.sj.komotodo
 
 import com.google.gson.annotations.SerializedName
+import java.text.SimpleDateFormat
 import java.util.*
 
 /*
@@ -54,4 +55,16 @@ data class Pomo(
         sb.append("}").append(LF)
         return sb.toString()
     }
+
+    fun toLine(): String {
+        val sb = java.lang.StringBuilder()
+        run {
+            val dateStr: String = SimpleDateFormat("yyyy-MM-dd").format(local_started_at)
+            val beginStr: String = SimpleDateFormat("hh:mm:ss").format(local_started_at)
+            val endStr: String = SimpleDateFormat("hh:mm:ss").format(local_ended_at)
+            sb.append("  ${dateStr} ${beginStr}~${endStr} (${length}:seconds) '${description}'")
+        }
+        return sb.toString()
+    }
+
 }

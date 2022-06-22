@@ -15,7 +15,7 @@ class PomoTest {
   "started_at": "2016-08-06T10:00:00.000Z",
   "ended_at": "2016-08-06T10:00:00.000Z",
   "local_started_at": "2016-08-06T18:00:00.000Z",
-  "local_ended_at": "2016-08-06T18:00:00.000Z",
+  "local_ended_at": "2016-08-06T18:03:00.000Z",
   "length": 1500,
   "abandoned": false,
   "manual": false
@@ -33,5 +33,10 @@ class PomoTest {
     @Test
     fun testToString() {
         println(Gson().fromJson(json_str, Pomo::class.java))
+    }
+
+    @Test
+    fun testToLine() {
+        println(Gson().fromJson(json_str, Pomo::class.java).toLine())
     }
 }
