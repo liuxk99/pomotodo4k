@@ -27,18 +27,18 @@ https://pomotodo.github.io/api-doc/#api-Todo-GetTodo
 ]
 */
 
-data class Todo (
-    @SerializedName("uuid") val uuid : String,
-    @SerializedName("created_at") val created_at : String,
-    @SerializedName("updated_at") val updated_at : String,
-    @SerializedName("description") val description : String,
-    @SerializedName("notice") val notice : String,
-    @SerializedName("pin") val pin : Boolean,
-    @SerializedName("completed") val completed : Boolean,
-    @SerializedName("completed_at") val completed_at : String,
-    @SerializedName("repeat_type") val repeat_type : String,
-    @SerializedName("remind_time") val remind_time : String,
-    @SerializedName("estimated_pomo_count") val estimated_pomo_count : String,
-    @SerializedName("costed_pomo_count") val costed_pomo_count : Int,
-    @SerializedName("sub_todos") val sub_todos : List<String>
+data class Todo(
+    @SerializedName("uuid") val uuid: String,
+    @SerializedName("created_at") val created_at: String,
+    @SerializedName("updated_at") val updated_at: String,
+    @SerializedName("description") val description: String,
+    @SerializedName("notice") val notice: String,
+    @SerializedName("pin") val pin: Boolean,
+    @SerializedName("completed") val completed: Boolean,
+    @SerializedName("completed_at") val completed_at: String,
+    @SerializedName("repeat_type") val repeat_type: String,
+    @SerializedName("remind_time") val remind_time: String,
+    @SerializedName("estimated_pomo_count") val estimated_pomo_count: String,
+    @SerializedName("costed_pomo_count") val costed_pomo_count: Int,
+    @SerializedName("sub_todos") val sub_todos: List<String>
 )

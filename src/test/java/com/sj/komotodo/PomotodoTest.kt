@@ -5,8 +5,7 @@ import org.junit.Before
 import org.junit.Test
 import java.io.File
 
-fun readFileDirectlyAsText(fileName: String): String
-    = File(fileName).readText(Charsets.UTF_8)
+fun readFileDirectlyAsText(fileName: String): String = File(fileName).readText(Charsets.UTF_8)
 
 class PomotodoTest {
     @Before
