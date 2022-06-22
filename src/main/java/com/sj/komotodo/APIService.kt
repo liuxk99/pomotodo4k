@@ -5,6 +5,7 @@ import com.sj.komotodo.entity.Pomo
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface APIService {
@@ -12,6 +13,12 @@ interface APIService {
     fun getAccount(
         @Header("Authorization") token: String
     ): Call<Account>
+
+    @GET("pomos/{uuid}")
+    fun getPomo(
+        @Header("Authorization") token: String,
+        @Path("uuid") uuid: String
+    ): Call<Pomo>
 
     @GET("pomos?limit=40")
     fun getPomos(

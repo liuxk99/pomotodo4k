@@ -54,6 +54,21 @@ class APIServiceTest {
         }
     }
 
+    @Test
+    fun testGetPomo() {
+        try {
+            val response = service.getPomo(tokenTag,
+                "3748f405-55cf-4068-ab3e-82fedb34d36e").execute()
+            if (response.isSuccessful) {
+//                println(response.body())
+                println(response.body()?.toLine())
+            } else {
+                // failed
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 
     @Test
     fun testGetPomos() {
