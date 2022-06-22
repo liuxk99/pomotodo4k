@@ -35,6 +35,8 @@ data class Pomo(
     @SerializedName("abandoned") val abandoned: Boolean = false,
     @SerializedName("manual") val manual: Boolean = true
 ) {
+    private val duration: Long
+        get() = (local_ended_at.time - local_started_at.time) / 1000
 
     override fun toString(): String {
         val LF = "\n"
@@ -48,7 +50,7 @@ data class Pomo(
             sb.append(" ended_at: ${ended_at}${LF}")
             sb.append(" local_started_at: ${local_started_at}${LF}")
             sb.append(" local_ended_at: ${local_ended_at}${LF}")
-            sb.append(" length: ${length}${LF}")
+            sb.append(" length: ${duration}${LF}")
             sb.append(" abandoned: ${abandoned}${LF}")
             sb.append(" manual: ${manual}${LF}")
         }
@@ -59,10 +61,10 @@ data class Pomo(
     fun toLine(): String {
         val sb = java.lang.StringBuilder()
         run {
-            val dateStr: String = SimpleDateFormat("yyyy-MM-dd").format(local_started_at)
-            val beginStr: String = SimpleDateFormat("hh:mm:ss").format(local_started_at)
-            val endStr: String = SimpleDateFormat("hh:mm:ss").format(local_ended_at)
-            sb.append("  ${dateStr} ${beginStr}~${endStr} (${length}:seconds) '${description}'")
+            val dateStr = SimpleDateFormat("yyyy-MM-dd").format(local_started_at)
+            val beginStr = SimpleDateFormat("hh:mm:ss").format(local_started_at)
+            val endStr = SimpleDateFormat("hh:mm:ss").format(local_ended_at)
+            sb.append("  ${dateStr} ${beginStr}~${endStr} (${duration}:seconds) '${description}'")
         }
         return sb.toString()
     }
