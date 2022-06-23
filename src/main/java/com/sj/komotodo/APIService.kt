@@ -3,16 +3,24 @@ package com.sj.komotodo
 import com.sj.komotodo.entity.Account
 import com.sj.komotodo.entity.Pomo
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface APIService {
+    @FormUrlEncoded
     @GET("account")
     fun getAccount(
         @Header("Authorization") token: String
     ): Call<Account>
+
+    @FormUrlEncoded
+    @POST("pomos")
+    fun postPomo(
+        @Header("Authorization") token: String,
+        @Field("timezone") timezone: String,
+        @Field("started_at") started_at: Long,
+        @Field("ended_at") ended_at: Long,
+        @Field("description") description: String
+    ): Call<Pomo?>?
 
     @GET("pomos/{uuid}")
     fun getPomo(

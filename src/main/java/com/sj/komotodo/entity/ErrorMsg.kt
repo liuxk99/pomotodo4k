@@ -10,7 +10,7 @@ data class ErrorMsg(
     @SerializedName("documentation_url")
     val documentationUrl: String,
     @SerializedName("errors")
-    val errors: List<Any>,
+    val errors: List<ErrorInfo>,
     @SerializedName("message")
     val message: String
 )

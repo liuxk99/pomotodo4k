@@ -2,6 +2,7 @@ package com.sj.komotodo
 
 import com.google.gson.Gson
 import com.sj.komotodo.entity.Todo
+import org.junit.Test
 
 class TodoTest {
     val json_str = """
@@ -33,7 +34,7 @@ class TodoTest {
     fun tearDown() {
     }
 
-    @org.junit.Test
+    @Test
     fun testToString() {
         val gson = Gson()
         val todo = gson.fromJson(json_str, Todo::class.java)
