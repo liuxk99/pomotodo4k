@@ -16,5 +16,6 @@ class UtilTest {
     fun testDateToISO8601() {
         val date = Date()
         println(date.toISO8601())
+        println(date.toISO8601(Locale.ENGLISH))
     }
 }
